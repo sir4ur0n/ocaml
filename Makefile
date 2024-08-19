@@ -1290,7 +1290,11 @@ $(SAK): runtime/sak.$(O)
 runtime/sak.$(O): runtime/sak.c runtime/caml/misc.h runtime/caml/config.h
 	$(V_CC)$(SAK_CC) -c $(SAK_CFLAGS) $(OUTPUTOBJ)$@ $<
 
-C_LITERAL = $(shell $(SAK) encode-C-literal '$(1)')
+ifeq "$(UNIX_OR_WIN32)" "unix"
+C_LITERAL = $(shell $(SAK) encode-C-utf8-literal '$(1)')
+else
+C_LITERAL = $(shell $(SAK) encode-C-utf16-literal '$(1)')
+endif
 
 runtime/build_config.h: $(ROOTDIR)/Makefile.config $(SAK)
 	$(V_GEN)echo '/* This file is generated from $(ROOTDIR)/Makefile.config */' > $@ && \
