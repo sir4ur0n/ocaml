@@ -687,6 +687,9 @@ OCaml 5.2.0
   and fix C compiler feature detection on macOS.
   (Antonin Décimo, review by Miod Vallat and Sébastien Hinderer)
 
+- #XXXXX: Simplify the build of cross compilers
+  (Samuel Hym)
+
 ### Bug fixes:
 
 - #10652, #12720: fix evaluation order in presence of optional arguments
