@@ -1,5 +1,14 @@
-OCaml 5.2.0
-------------
+Working version
+---------------
+
+### Build system:
+
+- #XXXXX: Simplify the build of cross compilers
+  (Samuel Hym)
+
+
+OCaml 5.2.0 (13 May 2024)
+-------------------------
 
 (Changes that can break existing programs are marked with a "*")
 
