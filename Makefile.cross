@@ -60,7 +60,8 @@ endif
 	$(MAKE) $(OLDS) ocamlyacc $(CROSS_OVERRIDES)
 	$(MAKE) $(OLDS) ocamllex $(CROSS_COMPILER_OVERRIDES)
 	$(MAKE) $(OLDS) ocaml $(CROSS_COMPILER_OVERRIDES)
-	$(MAKE) $(OLDS) dynlink-all $(CROSS_OVERRIDES)
+  # Commented out as I suspect `dynlink-all` was added after 5.2
+	# $(MAKE) $(OLDS) dynlink-all $(CROSS_OVERRIDES)
 	$(MAKE) $(OLDS) -C otherlibs all $(CROSS_OVERRIDES)
 	$(MAKE) $(OLDS) runtimeopt $(NO_ZSTD)
 	$(MAKE) $(OLDS) ocamlc.opt ocamlopt.opt $(TOOLS_NATIVE_TARGETS) \
